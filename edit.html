@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit ticket</title>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <script src="lib/require.js"></script>
+        <script src="src/config.js"></script>
+    </head>
+    <body>
+        <div class="content pt-6 md:p-12 md:text-left space-y-4">
+            <h1 class="text-xl font-semibold">Edit tickets</h1>
+            <form id="register-form">
+                <div>
+                    <label for="title" class="text-l text-gray-500 font-semibold">Title</label>
+                    <input type="text" id="title" class="shadow appearance-none border rounded w-500 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label for="description" class="text-l text-gray-500 font-semibold">Description</label>
+                    <input type="text" id="description" class="shadow appearance-none border rounded w-500 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label for="assigned" class="text-l text-gray-500 font-semibold">Asigned</label>
+                    <select id="assigned" class="shadow appearance-none border rounded w-500 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="manager">Manager</option>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                        <option value="designer">QA</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="status" class="text-l text-gray-500 font-semibold">Status</label>
+                    <select id="status" class="shadow appearance-none border rounded w-500 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="backlog">Backlog</option>
+                        <option value="todo">To do</option>
+                        <option value="development">Development</option>
+                        <option value="codereview">Code review</option>
+                    </select>
+                </div>
+                <a id="save" class="text-s text-blue-500 cursor-pointer">Save</a>
+                <a id="delete" class="text-s text-red-500 cursor-pointer">Delete</a>
+            </form>
+        </div>
+
+        <script>
+            require(['edit'], function (edit) {
+                edit();
+            });
+        </script>
+    </body>
+</html>
